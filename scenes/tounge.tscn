@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bne1ap73wm8ca"]
+
+[ext_resource type="Texture2D" uid="uid://b6gkheec1f1qs" path="res://sprites/tounge/New Piskel (2).png" id="1_7xipr"]
+[ext_resource type="Script" path="res://scenes/tounge.gd" id="1_ay20i"]
+[ext_resource type="Texture2D" uid="uid://ce3rpyw601ryu" path="res://sprites/tounge/New Piskel (3).png" id="2_7mu83"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_223wk"]
+radius = 0.5
+
+[node name="Chain" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_ay20i")
+
+[node name="Links" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, 1.5)
+texture = ExtResource("1_7xipr")
+region_enabled = true
+region_rect = Rect2(0, 0, 6, 6)
+
+[node name="Tip" type="CharacterBody2D" parent="."]
+collision_layer = 4
+
+[node name="Hook" type="Sprite2D" parent="Tip"]
+texture_filter = 1
+position = Vector2(0, -9)
+rotation = 0.598648
+scale = Vector2(2, 2)
+texture = ExtResource("2_7mu83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tip"]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_223wk")
