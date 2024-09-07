@@ -10,15 +10,17 @@ size = Vector2(35, 30)
 [node name="player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_rc32j")
+speed = null
+gravity = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, 7)
 shape = SubResource("RectangleShape2D_mftks")
 
-[node name="Chain" parent="." instance=ExtResource("3_k6c25")]
-visible = false
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1, 7)
 texture = ExtResource("1_nslmk")
+
+[node name="Chain" parent="." instance=ExtResource("3_k6c25")]
+visible = false
