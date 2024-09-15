@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bne1ap73wm8ca"]
 
 [ext_resource type="Texture2D" uid="uid://b6gkheec1f1qs" path="res://sprites/tounge/New Piskel (2).png" id="1_7xipr"]
-[ext_resource type="Script" path="res://scenes/tounge.gd" id="1_ay20i"]
+[ext_resource type="Script" path="res://script/tounge.gd" id="1_ay20i"]
 [ext_resource type="Texture2D" uid="uid://ce3rpyw601ryu" path="res://sprites/tounge/New Piskel (3).png" id="2_7mu83"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_223wk"]

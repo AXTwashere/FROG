@@ -25,7 +25,7 @@ var shootvec = Vector2(0,0)
 var mouse = false
 var deadzone = 0
 
-@export var playerId = 1
+@export var playerId = 2
 var maxhp = 3
 var hp = maxhp 
 

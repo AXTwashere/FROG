@@ -1,30 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwb8x8e02wuoj"]
+[gd_scene load_steps=7 format=3 uid="uid://dwb8x8e02wuoj"]
 
 [ext_resource type="Texture2D" uid="uid://f4pcf5678fe5" path="res://sprites/background/1.png" id="1_qumq4"]
 [ext_resource type="PackedScene" uid="uid://biiou1loco1a5" path="res://scenes/player.tscn" id="1_wp8iq"]
 [ext_resource type="Texture2D" uid="uid://d3cbup5stinvn" path="res://sprites/background/4.png" id="2_iucog"]
 [ext_resource type="PackedScene" uid="uid://u7o4fr3mkpi6" path="res://scenes/tile_map.tscn" id="2_yfvlx"]
 [ext_resource type="Texture2D" uid="uid://cb2j13lh3damg" path="res://sprites/background/5.png" id="3_e5wog"]
+[ext_resource type="Script" path="res://scenes/playertest.gd" id="5_quvln"]
 
 [node name="test" type="Node2D"]
 
-[node name="1" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="1" type="Sprite2D" parent="Sprite2D"]
 modulate = Color(0.843184, 0.843184, 0.843184, 1)
 scale = Vector2(6.2, 6.2)
 texture = ExtResource("1_qumq4")
 
-[node name="4" type="Sprite2D" parent="."]
+[node name="4" type="Sprite2D" parent="Sprite2D"]
 modulate = Color(0.862745, 0.862745, 0.862745, 0.862745)
 scale = Vector2(6.2, 6.2)
 texture = ExtResource("2_iucog")
 
-[node name="5" type="Sprite2D" parent="."]
+[node name="5" type="Sprite2D" parent="Sprite2D"]
 modulate = Color(0.864675, 0.864675, 0.864675, 1)
 scale = Vector2(6.2, 6.2)
 texture = ExtResource("3_e5wog")
 
 [node name="player" parent="." instance=ExtResource("1_wp8iq")]
 position = Vector2(570, 305)
+
+[node name="player2" parent="." instance=ExtResource("1_wp8iq")]
+position = Vector2(-498, 163)
+script = ExtResource("5_quvln")
+playerId = 2
 
 [node name="TileMap" parent="." instance=ExtResource("2_yfvlx")]
 scale = Vector2(2, 2)
