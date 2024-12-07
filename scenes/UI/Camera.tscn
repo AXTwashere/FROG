@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxh5ltf1uoj14"]
+
+[ext_resource type="Script" path="res://script/camera.gd" id="1_dn46f"]
+[ext_resource type="PackedScene" uid="uid://k1na0qawes8o" path="res://scenes/UI/p1_hud.tscn" id="1_gowew"]
+
+[node name="Camera2D" type="Camera2D"]
+script = ExtResource("1_dn46f")
+
+[node name="huds" type="Node2D" parent="."]
+
+[node name="P1 hud" parent="huds" instance=ExtResource("1_gowew")]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0

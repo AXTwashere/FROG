@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://k1na0qawes8o"]
+
+[ext_resource type="Theme" uid="uid://c28ju87stb15t" path="res://scenes/UI/themes/P1 theme.tres" id="1_jp2xm"]
+[ext_resource type="Texture2D" uid="uid://butttq7c368uj" path="res://sprites/New Piskel (9) (2).png" id="2_a3145"]
+
+[node name="P1 hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 204.0
+offset_bottom = 79.0
+theme = ExtResource("1_jp2xm")
+
+[node name="Label" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 1
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 66.0
+offset_bottom = 25.0
+scale = Vector2(0.5, 0.5)
+text = "Player 1"
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -131.0
+offset_top = 5.0
+offset_right = 121.0
+offset_bottom = 42.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.0
+offset_top = 26.0
+offset_right = 92.0
+offset_bottom = 36.0
+scale = Vector2(3, 3)
+max_value = 5.0
+value = 5.0
+rounded = true
+texture_under = ExtResource("2_a3145")
+texture_progress = ExtResource("2_a3145")
+tint_under = Color(0.230315, 0.230315, 0.230315, 1)

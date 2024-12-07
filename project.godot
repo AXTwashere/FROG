@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="frog game"
-run/main_scene="res://scenes/test.tscn"
+run/main_scene="res://scenes/Maps/test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/mode=2
-window/size/borderless=true
+window/size/mode=3
+window/stretch/mode="viewport"
 
 [input]
 
@@ -180,6 +180,10 @@ P2_right_stick_down={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":1,"axis":3,"axis_value":1.0,"script":null)
 ]
 }
+joyaxisrightx={
+"deadzone": 0.5,
+"events": []
+}
 
 [layer_names]
 
@@ -187,3 +191,4 @@ P2_right_stick_down={
 2d_physics/layer_2="player"
 2d_physics/layer_3="hook"
 2d_physics/layer_4="bullet"
+2d_physics/layer_5="items"

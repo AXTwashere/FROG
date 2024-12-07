@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://kc7eysfgloks"]
+
+[ext_resource type="Texture2D" uid="uid://cy4n74uiv73tq" path="res://sprites/bubble sprite.png" id="1_6eec6"]
+[ext_resource type="Script" path="res://script/itembubble.gd" id="1_8wvjv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aonei"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"pistol",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vphb"]
+size = Vector2(13, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbjhs"]
+size = Vector2(14, 14)
+
+[node name="itemBubble" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 16
+script = ExtResource("1_8wvjv")
+
+[node name="bubble" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_6eec6")
+
+[node name="item" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aonei")
+animation = &"pistol"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1vphb")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vbjhs")
+
+[node name="obj" type="RemoteTransform2D" parent="."]
+remote_path = NodePath(".")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,205 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj8t6cxabr53p"]
+
+[ext_resource type="Theme" uid="uid://4hfnstymaxam" path="res://scenes/UI/themes/base theme.tres" id="1_me8mj"]
+[ext_resource type="Theme" uid="uid://c28ju87stb15t" path="res://scenes/UI/themes/P1 theme.tres" id="2_fjuxc"]
+
+[node name="Player Select" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="Player 1" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -224.0
+offset_top = -169.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_me8mj")
+
+[node name="Label" type="Label" parent="Player 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_me8mj")
+text = "Press \"a\""
+
+[node name="Player 1" type="Panel" parent="Player 1"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -145.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_fjuxc")
+
+[node name="Label" type="Label" parent="Player 1/Player 1"]
+layout_mode = 1
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 69.0
+offset_bottom = 30.0
+theme = ExtResource("2_fjuxc")
+text = "Player 1"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player 1/Player 1"]
+
+[node name="cosmetics" type="VBoxContainer" parent="Player 1/Player 1"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -121.0
+offset_right = -15.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="hat" type="HBoxContainer" parent="Player 1/Player 1/cosmetics"]
+layout_mode = 2
+
+[node name="left arrow" type="Button" parent="Player 1/Player 1/cosmetics/hat"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../box")
+focus_neighbor_bottom = NodePath("../../color/box")
+
+[node name="box" type="Button" parent="Player 1/Player 1/cosmetics/hat"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../left arrow")
+focus_neighbor_right = NodePath("../right arrow")
+focus_neighbor_bottom = NodePath("../../color/box")
+focus_next = NodePath("../../color/box")
+
+[node name="right arrow" type="Button" parent="Player 1/Player 1/cosmetics/hat"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../box")
+focus_neighbor_bottom = NodePath("../../color/box")
+
+[node name="color" type="HBoxContainer" parent="Player 1/Player 1/cosmetics"]
+layout_mode = 2
+
+[node name="left arrow" type="Button" parent="Player 1/Player 1/cosmetics/color"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../hat/box")
+focus_neighbor_right = NodePath("../box")
+
+[node name="box" type="Button" parent="Player 1/Player 1/cosmetics/color"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../left arrow")
+focus_neighbor_top = NodePath("../../hat/box")
+focus_neighbor_right = NodePath("../right arrow")
+focus_previous = NodePath("../../hat/box")
+
+[node name="right arrow" type="Button" parent="Player 1/Player 1/cosmetics/color"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../box")
+focus_neighbor_top = NodePath("../../hat/box")
+focus_previous = NodePath("../../hat/box")
+
+[node name="Player 2" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 224.0
+offset_bottom = 169.0
+theme = ExtResource("1_me8mj")
+
+[node name="Label" type="Label" parent="Player 2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_me8mj")
+text = "Press \"a\""
+
+[node name="Player 3" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -169.0
+offset_right = 224.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme = ExtResource("1_me8mj")
+
+[node name="Label" type="Label" parent="Player 3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_me8mj")
+text = "Press \"a\""
+
+[node name="Player 4" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -224.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 169.0
+grow_horizontal = 0
+theme = ExtResource("1_me8mj")
+
+[node name="Label" type="Label" parent="Player 4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_me8mj")
+text = "Press \"a\""
